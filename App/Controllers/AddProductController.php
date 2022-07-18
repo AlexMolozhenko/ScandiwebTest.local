@@ -3,7 +3,7 @@
 namespace Controllers;
 
 use Core\AbstractController;
-use Core\View;
+
 class AddProductController extends AbstractController
 {
     public function __construct()
