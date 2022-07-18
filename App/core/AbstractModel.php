@@ -24,4 +24,22 @@ abstract class AbstractModel
         }
     }
 
+    /**
+     * @return array
+     */
+    abstract function getAll();
+
+    /**
+     * @param $id
+     * @return array
+     */
+//    abstract function get($id);
+
+    /**
+     * @param $id
+     */
+//    abstract function add($id);
+
+
+
 }
