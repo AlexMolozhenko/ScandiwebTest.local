@@ -56,6 +56,10 @@ class Route
 
     }
 
+    /**
+     * get errors from session
+     * @return array
+     */
     static public function getErrors()
     {
         session_start();
@@ -67,6 +71,9 @@ class Route
         return $errors;
     }
 
+    /**
+     * returns a 404 page
+     */
     static public function notFound()
     {
         http_response_code(404);
