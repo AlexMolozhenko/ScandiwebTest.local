@@ -13,14 +13,14 @@ if ($db->connect_errno!==0){
 /**
  * CREATE TABLE types
  */
-$sql = "CREATE TABLE type (id int unsigned auto_increment , name varchar(50),   PRIMARY KEY(id) );";
+$sql = "CREATE TABLE type (id int unsigned auto_increment , name varchar(50) unique,   PRIMARY KEY(id) );";
 $result = $db->query($sql);
 echo 'db structure (types  table): ' . ($result ? 'true' : $db->error) . '</br>';
 
 /**
  * CREATE TABLE attributes
  */
-$sql ="CREATE TABLE attribute (id int unsigned auto_increment, name varchar(50),  PRIMARY KEY(id));";
+$sql ="CREATE TABLE attribute (id int unsigned auto_increment, name varchar(50) unique,  PRIMARY KEY(id));";
 $result = $db->query($sql);
 echo 'db structure (attribute  table): ' . ($result ? 'true' : $db->error) . '</br>';
 
