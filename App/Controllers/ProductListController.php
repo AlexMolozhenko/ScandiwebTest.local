@@ -14,8 +14,9 @@ class ProductListController extends AbstractController
     }
 
     public function index(){
-        $type = $this->typeModel->getAll();
-        $this->view->render('productList_index_view',['type'=>$type]);
+
+        $this->view->render('productList_index_view');
+
 
 
 
