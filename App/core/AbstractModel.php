@@ -27,18 +27,19 @@ abstract class AbstractModel
     /**
      * @return array
      */
-    abstract function getAll();
+    abstract protected function getAll();
 
     /**
      * @param $id
      * @return array
      */
-//    abstract function get($id);
+    abstract protected function get($id);
 
     /**
-     * @param $id
+     * @param $data
+     * @return mixed
      */
-//    abstract function add($id);
+    abstract protected function add($data);
 
 
 

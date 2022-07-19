@@ -4,32 +4,33 @@ namespace Model;
 
 use Core\AbstractModel;
 
-class TypeModel extends AbstractModel
+class AttributeModel extends AbstractModel
 {
+
     /**
-     * get all types
-     * @return array|mixed
+     * get all  attributes
+     * @return array
      * @throws \Exception
      */
-    public function getAll(){
-        $sql = "SELECT * FROM `type`;";
+    public function getAll()
+    {
+        $sql = "SELECT * FROM `attribute`;";
         $result = $this->db->query($sql);
-        if($this->db->errno !== 0  ){
-            throw new \Exception($this->db->error);
+        if($this->db->errno !==0 ){
+            throw new \Exception($this->db->errno);
         }
         return $result->fetch_all(MYSQLI_ASSOC);
-
     }
 
     /**
-     * get type by id
+     * get attribute by id
      * @param $id
-     * @return mixed
+     * @return array
      * @throws \Exception
      */
-    public function get($id)
+    public  function get($id)
     {
-        $sql = "SELECT `name` FROM `type` WHERE `id`={$id};";
+        $sql = "SELECT `name` FROM `attribute` WHERE `id`={$id};";
         $result = $this->db->query($sql);
         if($this->db->errno !== 0  ){
             throw new \Exception($this->db->error);
@@ -41,4 +42,5 @@ class TypeModel extends AbstractModel
     {
         // TODO: Implement add() method.
     }
+
 }
