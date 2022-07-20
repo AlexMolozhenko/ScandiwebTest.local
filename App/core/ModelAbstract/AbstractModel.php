@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace core\ModelAbstract;
 
 include_once "../config/configDB.php";
 
