@@ -2,8 +2,9 @@
 
 namespace Controllers;
 
-use Core\AbstractController;
-use Core\View;
+
+
+use Core\ControllerAbstract\AbstractController;
 
 class ProductListController extends AbstractController
 {

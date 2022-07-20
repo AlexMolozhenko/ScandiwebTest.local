@@ -1,7 +1,8 @@
 <?php
 
-namespace Core;
+namespace Core\ControllerAbstract;
 
+use Core\View;
 use Model\AttributeModel;
 use Model\ProductsModel;
 use Model\TypeAttributeModel;
