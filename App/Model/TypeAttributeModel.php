@@ -2,14 +2,16 @@
 
 namespace Model;
 
-use Core\AbstractModel;
 
-class TypeAttributeModel extends AbstractModel
+
+use core\ModelAbstract\AbstractTypeAttributeModel;
+
+class TypeAttributeModel extends AbstractTypeAttributeModel
 {
 
     /**
-     * get attribute list by type id
-     * @param type  $id
+     * get attribute  list by type id
+     * @param   $id
      * @return array
      * @throws \Exception
      */
@@ -23,15 +25,16 @@ class TypeAttributeModel extends AbstractModel
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getAll()
+    public function getIdTypeAttributeByTypeId($typeId)
     {
-        // TODO: Implement getAll() method.
+        $sql="SELECT `id` FROM `type_attribute` WHERE type_id ={$typeId};";
+        $result = $this->db->query($sql);
+        if($this->db->errno !== 0  ){
+            throw new \Exception($this->db->error);
+        }
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 
-    public function add($data)
-    {
-        // TODO: Implement add() method.
-    }
 
 }

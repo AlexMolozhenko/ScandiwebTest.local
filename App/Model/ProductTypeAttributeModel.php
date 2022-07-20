@@ -2,18 +2,14 @@
 
 namespace Model;
 
-use Core\AbstractModel;
 
-class ProductTypeAttributeModel extends AbstractModel
+
+
+use core\ModelAbstract\AbstractProductTypeAttributeModel;
+
+class ProductTypeAttributeModel extends AbstractProductTypeAttributeModel
 {
-    protected function getAll()
-    {
-        // TODO: Implement getAll() method.
-    }
-    protected function get($id)
-    {
-        // TODO: Implement get() method.
-    }
+
     protected function add($data)
     {
         extract($data);

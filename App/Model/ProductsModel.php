@@ -2,9 +2,13 @@
 
 namespace Model;
 
-use Core\AbstractModel;
 
-class ProductsModel extends AbstractModel
+
+
+
+use core\ModelAbstract\AbstractProductsModel;
+
+class ProductsModel extends AbstractProductsModel
 {
     /**
      * get all products

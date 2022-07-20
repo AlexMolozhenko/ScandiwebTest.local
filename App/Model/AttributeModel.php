@@ -2,9 +2,11 @@
 
 namespace Model;
 
-use Core\AbstractModel;
 
-class AttributeModel extends AbstractModel
+
+use core\ModelAbstract\AbstractAttributeModel;
+
+class AttributeModel extends AbstractAttributeModel
 {
 
     /**
@@ -38,9 +40,6 @@ class AttributeModel extends AbstractModel
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function add($data)
-    {
-        // TODO: Implement add() method.
-    }
+
 
 }

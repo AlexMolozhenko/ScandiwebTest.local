@@ -2,9 +2,9 @@
 
 namespace Model;
 
-use Core\AbstractModel;
+use core\ModelAbstract\AbstractTypeModel;
 
-class TypeModel extends AbstractModel
+class TypeModel extends AbstractTypeModel
 {
     /**
      * get all types
@@ -37,8 +37,5 @@ class TypeModel extends AbstractModel
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function add($data)
-    {
-        // TODO: Implement add() method.
-    }
+
 }
