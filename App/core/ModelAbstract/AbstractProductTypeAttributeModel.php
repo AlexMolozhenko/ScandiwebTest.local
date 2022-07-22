@@ -1,8 +1,8 @@
 <?php
-
 namespace core\ModelAbstract;
 
-abstract class AbstractProductTypeAttributeModel extends AbstractMode
+
+abstract class AbstractProductTypeAttributeModel extends AbstractModel
 {
 
     /**
