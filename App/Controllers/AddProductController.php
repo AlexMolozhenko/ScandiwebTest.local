@@ -20,16 +20,16 @@ class AddProductController extends AbstractController
         $typeId = $this->typeModel->get(1);
         $attributeAll = $this->attributeModel->getAll();
         $attributeId = $this->attributeModel->get(1);
-        $typeAttributeId = $this->typeAttributeModel->get(3);
         $IdTypeAttributeByTypeId = $this->typeAttributeModel->getIdTypeAttributeByTypeId(3);
         $productAdd = $this->productsModel->add([
-            'sku'=>'T72',
-            'name'=>'bulat',
+            'sku'=>'T82',
+            'name'=>'tank',
             'price'=>10000,
             'type_id'=>1,
         ]);
         $productsAll =$this->productsModel->getAll();
         $productId =$this->productsModel->get(3);
+//        $productTypeAttribute = $this->productTypeAttributeModel->
 
 
 
@@ -41,7 +41,6 @@ class AddProductController extends AbstractController
             'typeId'=>$typeId,
             'attributeAll'=>$attributeAll,
             'attributeId'=>$attributeId,
-            'typeAttributeId'=>$typeAttributeId,
             'IdTypeAttributeByTypeId'=>$IdTypeAttributeByTypeId,
             'productAdd'=>$productAdd,
             'productsAll'=>$productsAll,
