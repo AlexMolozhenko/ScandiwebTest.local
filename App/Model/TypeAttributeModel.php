@@ -4,10 +4,21 @@ namespace Model;
 
 
 
-use core\ModelAbstract\AbstractTypeAttributeModel;
+use core\ImplementsModel\InterfaceTypeAttributeModel;
+use core\ModelAbstract\AbstractModel;
 
-class TypeAttributeModel extends AbstractTypeAttributeModel
+class TypeAttributeModel extends AbstractModel implements InterfaceTypeAttributeModel
 {
+
+    public function getAll()
+    {
+
+        // TODO: Implement getAll() method.
+    }
+     public function get($id)
+     {
+         // TODO: Implement get() method.
+     }
 
     /**
      * Get list with TypeAttribute_id and name of attribute BY id type

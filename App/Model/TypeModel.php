@@ -2,9 +2,10 @@
 
 namespace Model;
 
-use core\ModelAbstract\AbstractTypeModel;
+use core\ImplementsModel\InterfaceTypeModel;
+use core\ModelAbstract\AbstractModel;
 
-class TypeModel extends AbstractTypeModel
+class TypeModel extends AbstractModel implements InterfaceTypeModel
 {
     /**
      * get all types
@@ -35,6 +36,11 @@ class TypeModel extends AbstractTypeModel
             throw new \Exception($this->db->error);
         }
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function add($name)
+    {
+        // TODO: Implement add() method.
     }
 
 

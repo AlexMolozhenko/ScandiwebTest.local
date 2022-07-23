@@ -2,13 +2,10 @@
 
 namespace Model;
 
+use core\ImplementsModel\InterfaceProductsModel;
+use core\ModelAbstract\AbstractModel;
 
-
-
-
-use core\ModelAbstract\AbstractProductsModel;
-
-class ProductsModel extends AbstractProductsModel
+class ProductsModel extends AbstractModel implements InterfaceProductsModel
 {
     /**
      * get all products
@@ -42,13 +39,15 @@ class ProductsModel extends AbstractProductsModel
     }
 
     /**
-     * add a new product
-     * @param array $data
+     * add product
+     * @param $sku
+     * @param $name
+     * @param $price
+     * @param $type_id
      * @return string
      */
-    public function add($data)
+    public function add($sku,$name,$price,$type_id)
     {
-        extract($data);
         $sql = "INSERT INTO `products` (sku,name,price,type_id) VALUES ('{$sku}','{$name}','{$price}','{$type_id}');";
         $result = $this->db->query($sql);
         return 'db insert (products  table): ' . ($result ? 'true' : $this->db->error) . '</br>';
