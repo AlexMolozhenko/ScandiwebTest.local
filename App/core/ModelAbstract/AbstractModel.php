@@ -24,22 +24,22 @@ abstract class AbstractModel
         }
     }
 
-    /**
-     * @return array
-     */
-    abstract protected function getAll();
-
-    /**
-     * @param $id
-     * @return array
-     */
-    abstract protected function get($id);
-
-    /**
-     * @param $data
-     * @return mixed
-     */
-    abstract protected function add($data);
+//    /**
+//     * @return array
+//     */
+//    abstract protected function getAll();
+//
+//    /**
+//     * @param $id
+//     * @return array
+//     */
+//    abstract protected function get($id);
+//
+//    /**
+//     * @param $data
+//     * @return mixed
+//     */
+//    abstract protected function add($data);
 
 
 
