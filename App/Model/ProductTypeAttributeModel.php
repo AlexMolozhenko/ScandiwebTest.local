@@ -26,8 +26,8 @@ class ProductTypeAttributeModel extends AbstractModel implements InterfaceProduc
      */
     public function add($products_id,$type_attribute_id,$value)
     {
-//        extract($data);
-        $sql = "INSERT INTO `products_type_attribute` (products_id,type_attribute_id,value) VALUES (`{$products_id}`,`{$type_attribute_id}`,`{$value}`);";
+
+        $sql = "INSERT INTO `products_type_attribute` (products_id,type_attribute_id,value) VALUES ({$products_id},{$type_attribute_id},{$value});";
         $result = $this->db->query($sql);
         return 'db insert (products_type_attribute  table): ' . ($result ? 'true' : $this->db->error) . '</br>';
     }

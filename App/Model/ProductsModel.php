@@ -44,13 +44,13 @@ class ProductsModel extends AbstractModel implements InterfaceProductsModel
      * @param $name
      * @param $price
      * @param $type_id
-     * @return string
+     * @return product_id|string_error
      */
     public function add($sku,$name,$price,$type_id)
     {
         $sql = "INSERT INTO `products` (sku,name,price,type_id) VALUES ('{$sku}','{$name}','{$price}','{$type_id}');";
         $result = $this->db->query($sql);
-        return 'db insert (products  table): ' . ($result ? 'true' : $this->db->error) . '</br>';
+        return 'db insert (products  table): ' . ($result ? $this->db->insert_id : $this->db->error) . '</br>';
     }
 
 
