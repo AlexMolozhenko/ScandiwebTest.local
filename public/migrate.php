@@ -27,7 +27,7 @@ echo 'db structure (attribute  table): ' . ($result ? 'true' : $db->error) . '</
 /**
  * CREATE TABLE products
  */
-$sql ="CREATE TABLE products ( id int unsigned auto_increment ,sku varchar(80) unique , name varchar(100),price decimal(20),type_id int unsigned,  PRIMARY KEY(id), FOREIGN KEY (type_id) REFERENCES type(id));";
+$sql ="CREATE TABLE products ( id int unsigned auto_increment ,sku varchar(80) unique , name varchar(100),price DECIMAL(20,2),type_id int unsigned,  PRIMARY KEY(id), FOREIGN KEY (type_id) REFERENCES type(id));";
 
 $result = $db->query($sql);
 echo 'db structure (product  table): ' . ($result ? 'true' : $db->error) . '</br>'.
@@ -43,6 +43,6 @@ echo 'db structure (type_attribute  table): ' . ($result ? 'true' : $db->error) 
 /**
  * CREATE TABLE product_type_attribute
  */
-$sql = "CREATE TABLE products_type_attribute (id int unsigned auto_increment,  products_id int unsigned ,type_attribute_id int unsigned ,value int (20),  PRIMARY KEY(id),UNIQUE(products_id,type_attribute_id),FOREIGN KEY (products_id) REFERENCES products(id),FOREIGN KEY (type_attribute_id) REFERENCES type_attribute(id)) ;";
+$sql = "CREATE TABLE products_type_attribute (id int unsigned auto_increment,  products_id int unsigned ,type_attribute_id int unsigned ,value varchar (50),  PRIMARY KEY(id),UNIQUE(products_id,type_attribute_id),FOREIGN KEY (products_id) REFERENCES products(id),FOREIGN KEY (type_attribute_id) REFERENCES type_attribute(id)) ;";
 $result = $db->query($sql);
 echo 'db structure (products_type_attribute  table): ' . ($result ? 'true' : $db->error) . '</br>';
