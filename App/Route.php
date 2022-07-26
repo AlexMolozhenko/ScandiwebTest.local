@@ -57,6 +57,27 @@ class Route
     }
 
     /**
+     * create url by controller and action
+     * @param string $controller
+     * @param string $action
+     * @return string
+     */
+    static public function url(string $controller = DEFAULT_CONTROLLER_NAME, string $action = DEFAULT_ACTION_NAME)
+    {
+        return "/$controller/$action";
+    }
+
+    /**
+     * redirect to url
+     * @param string $url
+     */
+    static public function redirect(string $url)
+    {
+        header("location: $url");
+        exit();
+    }
+
+    /**
      * get errors from session
      * @return array
      */
@@ -79,5 +100,7 @@ class Route
         http_response_code(404);
         exit();
     }
+
+
 
 }
