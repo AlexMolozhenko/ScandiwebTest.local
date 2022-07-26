@@ -3,35 +3,30 @@
 namespace Core\ControllerAbstract;
 
 use Core\View;
-use Model\AttributeModel;
-use Model\ProductsModel;
-use Model\ProductTypeAttributeModel;
-use Model\TypeAttributeModel;
-use Model\TypeModel;
+use Service\AttributeService;
+use Service\ProductsService;
+use Service\TypeService;
 
 abstract class AbstractController
 {
     protected $view;
 
-    protected $typeModel;
+    protected $productsService;
 
-    protected $attributeModel;
+    protected $typeService;
 
-    protected $typeAttributeModel;
+    protected $attributeService;
 
-    protected $productsModel;
-
-    protected $productTypeAttributeModel;
 
     public function __construct($template)
     {
         $this->view = new View($template);
 
-        $this->typeModel = new TypeModel();
-        $this->attributeModel = new AttributeModel();
-        $this->typeAttributeModel = new TypeAttributeModel();
-        $this->productsModel = new ProductsModel();
-        $this->productTypeAttributeModel = new ProductTypeAttributeModel();
+        $this->productsService = new ProductsService();
+
+        $this->typeService = new TypeService();
+
+        $this->attributeService = new AttributeService();
 
     }
 
