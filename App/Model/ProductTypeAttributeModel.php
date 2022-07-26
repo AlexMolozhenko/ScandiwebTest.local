@@ -19,6 +19,7 @@ class ProductTypeAttributeModel extends AbstractModel implements InterfaceProduc
     }
 
     /**
+     * add product attributes
      * @param $products_id
      * @param $type_attribute_id
      * @param $value
@@ -29,7 +30,7 @@ class ProductTypeAttributeModel extends AbstractModel implements InterfaceProduc
 
         $sql = "INSERT INTO `products_type_attribute` (products_id,type_attribute_id,value) VALUES ({$products_id},{$type_attribute_id},{$value});";
         $result = $this->db->query($sql);
-        return 'db insert (products_type_attribute  table): ' . ($result ? 'true' : $this->db->error) . '</br>';
+        return $result ? 'true' : $this->db->error;
     }
 
 }

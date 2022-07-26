@@ -39,18 +39,24 @@ class ProductsModel extends AbstractModel implements InterfaceProductsModel
     }
 
     /**
-     * add product
+     * add a product to the database without attributes. returns the product id
      * @param $sku
      * @param $name
      * @param $price
      * @param $type_id
-     * @return product_id|string_error
+     * @return int (product id)
+     * @throws \Exception
      */
     public function add($sku,$name,$price,$type_id)
     {
         $sql = "INSERT INTO `products` (sku,name,price,type_id) VALUES ('{$sku}','{$name}','{$price}','{$type_id}');";
-        $result = $this->db->query($sql);
-        return 'db insert (products  table): ' . ($result ? $this->db->insert_id : $this->db->error) . '</br>';
+        $this->db->query($sql);
+        if($this->db->errno !== 0  ){
+            throw new \Exception($this->db->error);
+        }else{
+            return $this->db->insert_id;
+        }
+
     }
 
 
