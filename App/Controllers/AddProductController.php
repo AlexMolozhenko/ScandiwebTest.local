@@ -15,7 +15,7 @@ class AddProductController extends AbstractController
     }
 
     public function index(){
-//        $typeService = $this->typeService->getAll();
+        $types = $this->typeService->getAll();
 //
 //        $attributeService = $this->attributeService->getAttributeByTypeId(2);
 //
@@ -28,12 +28,21 @@ class AddProductController extends AbstractController
 
 
         $this->view->render('addProduct_index_view',[
-            'typeService'=>$typeService,
-            'productService'=>$productService,
-            'attributeService'=>$attributeService,
+            'types'=>$types,
+//            'productService'=>$productService,
+//            'attributeService'=>$attributeService,
         ]);
 
 
+    }
+
+    public function getAtr(){
+        $typeId = filter_input(INPUT_GET,'typeId');
+//        $typeId = filter_input(INPUT_POST,'params');
+//        $typeId = $_REQUEST['params'];
+       var_dump($typeId);
+//        echo"{$typeId}";
+//        $attribute = $this->attributeService->getAttributeByTypeId(2);
     }
 
 }

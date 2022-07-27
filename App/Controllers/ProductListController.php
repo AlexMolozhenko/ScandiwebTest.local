@@ -23,5 +23,9 @@ class ProductListController extends AbstractController
 
     }
 
+    public function getAtr(){
+        echo"ok";
+    }
+
 
 }
