@@ -1,2 +1,2 @@
-<?php
-echo'product list';
+
+<h2>product list</h2>
