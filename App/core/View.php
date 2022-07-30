@@ -38,4 +38,19 @@ class View
         extract($data);
 include_once ROOT_DIRECTORY . DIRECTORY_SEPARATOR . VIEW_DIR . DIRECTORY_SEPARATOR . TEMPLATE_DIR . DIRECTORY_SEPARATOR . $this->view_template_file.'.php';
     }
+
+
+
+    /**
+     * includes a file for generating attribute input fields. passes an array of attributes
+     * @param $attributes
+     */
+    public function includeAttribute($attributes){
+        $fileName ="../App/View/user/includes/attribute.php";
+        if(file_exists($fileName)){
+            include_once $fileName;
+        }else{
+            echo 'attribute file not found';
+        }
+    }
 }
