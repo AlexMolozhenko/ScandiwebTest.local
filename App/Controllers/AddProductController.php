@@ -23,10 +23,6 @@ class AddProductController extends AbstractController
 //            ['type_attribute_id'=>12,'value'=>0.5],
 //        ]);
 
-
-
-
-
         $this->view->render('addProduct_index_view',[
             'types'=>$types,
 //            'productService'=>$productService,
@@ -36,13 +32,16 @@ class AddProductController extends AbstractController
 
     }
 
-    public function getAtr(){
+    public function getAttribute(){
         $typeId = filter_input(INPUT_GET,'typeId');
-//        $typeId = filter_input(INPUT_POST,'params');
-//        $typeId = $_REQUEST['params'];
-       var_dump($typeId);
-//        echo"{$typeId}";
-//        $attribute = $this->attributeService->getAttributeByTypeId(2);
+        $arrayAttributes = $this->attributeService->getAttributeByTypeId($typeId);
+        $this->view->includeAttribute($arrayAttributes);
+    }
+
+    public function add(){
+
+        $form = $_POST;
+        return var_dump($form);
     }
 
 }
