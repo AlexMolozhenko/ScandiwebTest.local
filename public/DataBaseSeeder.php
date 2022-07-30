@@ -23,7 +23,7 @@ echo 'db insert (type  table): ' . ($result ? 'true' : $db->error) . '</br>';
 /**
  * filling with initial data
  */
-$sql = "INSERT INTO attribute (name) values ('size'),('weight'),('height'),('width'),('length');";
+$sql = "INSERT INTO attribute (name,units) values ('Size', 'MB'),('Weight','KG'),('Height','CM'),('Width','CM'),('Length','CM');";
 $result = $db->query($sql);
 echo 'db insert (attribute  table): ' . ($result ? 'true' : $db->error) . '</br>';
 
