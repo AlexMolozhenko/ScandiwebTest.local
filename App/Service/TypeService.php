@@ -16,5 +16,16 @@ class TypeService extends AbstractService
         return $result;
     }
 
+    /**
+     * get type name by id
+     * @param $typeId
+     * @return mixed
+     * @throws \Exception
+     */
+    public function getId($typeId){
+        $result = $this->typeModel->get($typeId);
+        return $result;
+    }
+
 
 }
