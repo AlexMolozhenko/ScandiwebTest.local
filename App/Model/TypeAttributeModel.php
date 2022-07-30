@@ -24,7 +24,7 @@ class TypeAttributeModel extends AbstractModel implements InterfaceTypeAttribute
      */
      public function get($id)
      {
-         $sql = "SELECT `type_attribute`.`id` ,`attribute`.`name` FROM `type_attribute` INNER JOIN `attribute` ON `type_attribute`.`attribute_id` = `attribute`.`id` AND `type_attribute`.`type_id` = {$id};";
+         $sql = "SELECT `type_attribute`.`id` ,`attribute`.`name`,`attribute`.`units` FROM `type_attribute` INNER JOIN `attribute` ON `type_attribute`.`attribute_id` = `attribute`.`id` AND `type_attribute`.`type_id` = {$id};";
 
          $result = $this->db->query($sql);
          if($this->db->errno !== 0  ){

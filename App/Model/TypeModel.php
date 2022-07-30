@@ -35,7 +35,7 @@ class TypeModel extends AbstractModel implements InterfaceTypeModel
         if($this->db->errno !== 0  ){
             throw new \Exception($this->db->error);
         }
-        return $result->fetch_all(MYSQLI_ASSOC);
+        return $result->fetch_assoc();
     }
 
     public function add($name)
