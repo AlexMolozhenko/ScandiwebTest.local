@@ -45,7 +45,7 @@ include_once ROOT_DIRECTORY . DIRECTORY_SEPARATOR . VIEW_DIR . DIRECTORY_SEPARAT
      * includes a file for generating attribute input fields. passes an array of attributes
      * @param $attributes
      */
-    public function includeAttribute($attributes){
+    public function includeAttribute($attributes,$typeId){
         $fileName ="../App/View/user/includes/attribute.php";
         if(file_exists($fileName)){
             include_once $fileName;
