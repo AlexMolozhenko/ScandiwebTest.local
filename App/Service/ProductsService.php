@@ -23,10 +23,10 @@ class ProductsService extends AbstractService
      */
     public function setProduct($sku,$name,$price,$type_id,$attributes=[]){
         $IdProduct = $this->productsModel->add($sku,$name,$price,$type_id);
-        foreach ($attributes as $attribute){
-            $this->productTypeAttributeModel->add($IdProduct,$attribute['type_attribute_id'],$attribute['value']);
+        foreach ($attributes as $key=>$value){
+
+            $this->productTypeAttributeModel->add($IdProduct,$key,$value);
         }
-        return true;
     }
 
 }
