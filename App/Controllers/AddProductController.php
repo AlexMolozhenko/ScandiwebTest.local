@@ -32,16 +32,27 @@ class AddProductController extends AbstractController
 
     }
 
+
     public function getAttribute(){
         $typeId = filter_input(INPUT_GET,'typeId');
         $arrayAttributes = $this->attributeService->getAttributeByTypeId($typeId);
-        $this->view->includeAttribute($arrayAttributes);
+        $this->view->includeAttribute($arrayAttributes,$typeId);
     }
 
-    public function add(){
 
-        $form = $_POST;
-        return var_dump($form);
+
+    public function add(){
+        $sku = filter_input(INPUT_POST,'sku');
+        $name = filter_input(INPUT_POST,'name');
+        $price = filter_input(INPUT_POST,'price');
+        $typeId = filter_input(INPUT_POST,'typeId');
+//        $attributes = filter_input(INPUT_POST,'attributes');
+        $attributes = $_POST['attributes'];
+
+       $this->productsService->setProduct($sku,$name,$price,$typeId,$attributes);
+//        $form = $_POST;
+//        return var_dump($form);
+//        var_dump($_POST['attributes']);
     }
 
 }
