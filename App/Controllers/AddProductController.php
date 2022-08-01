@@ -49,7 +49,8 @@ class AddProductController extends AbstractController
 //        $attributes = filter_input(INPUT_POST,'attributes');
         $attributes = $_POST['attributes'];
 
-       $this->productsService->setProduct($sku,$name,$price,$typeId,$attributes);
+       $result = $this->productsService->setProduct($sku,$name,$price,$typeId,$attributes);
+       echo$result;
 //        $form = $_POST;
 //        return var_dump($form);
 //        var_dump($_POST['attributes']);
