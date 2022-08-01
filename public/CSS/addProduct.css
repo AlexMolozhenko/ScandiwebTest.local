@@ -1,12 +1,12 @@
 
-input:invalid{
-    border: 2px solid #000000 ;
-}
-
-/*input:invalid:required {*/
-/*    background-image: linear-gradient(to right, pink, lightgreen);*/
+/*input:invalid{*/
+/*    border: 2px solid #000000 ;*/
 /*}*/
 
-input:valid {
-    border: 2px solid lightgreen;
-}
+/*!*input:invalid:required {*!*/
+/*!*    background-image: linear-gradient(to right, pink, lightgreen);*!*/
+/*!*}*!*/
+
+/*input:valid {*/
+/*    border: 2px solid lightgreen;*/
+/*}*/
