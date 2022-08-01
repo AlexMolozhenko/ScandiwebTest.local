@@ -1,3 +1,4 @@
+
 /**
  * the function sends the element id and receives in response html with form attribute parameters
  * @param e
@@ -18,39 +19,65 @@
      e.preventDefault();
  };
 
- // document.getElementById('save').onclick = function(e){
- //     let form = document.forms.product_form;
- //     let formData = new FormData(form);
- //
- //     let errorForm = [];
- //     for(let el of formData.entries()){
- //
- //         if(el[1].length === 0){
- //             errorForm[el[0]] = "data in the line "+el[0]+" is not entered or entered incorrectly";
- //         }
- //     }
- //     console.log(errorForm);
- //     // for(let el of form.elements){
- //     //     let errorForm = [];
- //     //     if(el.value == 0){
- //     //         errorForm[el.name] = "data in the line "+el.name+" is not entered or entered incorrectly";
- //     //         console.log(errorForm[el.name]);
- //     //     }
- //     //       console.log(el.value);
- //     //   }
- //     // let formData = new FormData(form);
- //     // let xhr = new XMLHttpRequest();
- //     // let method = form.method;
- //     // let url = form.action;
- //     // xhr.open(method,url);
- //     // xhr.send(formData);
- //     // xhr.onreadystatechange = function(){
- //     //     if(xhr.readyState === 4){
- //     //         if(xhr.status === 200){
- //     //             document.getElementById('response').innerHTML = this.responseText;
- //     //         }
- //     //     }
- //     // };
- //     e.preventDefault();
- // };
+/**
+ * function to check form element for validity
+ * @param e
+ * @returns {*}
+ */
+function elementValid(e){
+        if(e.validity.valueMissing){
+            e.setCustomValidity("Please, provide "+e.name);
+        }else if (e.validity.patternMismatch){
+            e.setCustomValidity("Element value "+e.name+" does not match attribute");
+        }else {
+            e.setCustomValidity('');
+        }
+    return   e.reportValidity();
+
+}
+
+/**
+ * form validation function
+ * @param form
+ * @returns {boolean}
+ */
+function validForm(form){
+    let lenForm= form.elements.length;
+    let lenVal = 0;
+    for(let el of form.elements){
+        if(elementValid(el)==true){
+            lenVal++;
+        }
+    }
+    if(lenForm === lenVal){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+/**
+ * form submit function to server
+ * @param e
+ */
+ document.getElementById('save').onclick = function(e){
+
+     let form = document.forms.product_form;
+     if(validForm(form)==true){
+         let formData = new FormData(form);
+         let xhr = new XMLHttpRequest();
+         let method = form.method;
+         let url = form.action;
+         xhr.open(method,url);
+         xhr.send(formData);
+         xhr.onreadystatechange = function(){
+             if(xhr.readyState === 4){
+                 if(xhr.status === 200){
+                     document.getElementById('response').innerHTML = this.responseText;
+                 }
+             }
+         };
+     }
+     e.preventDefault();
+ };
 
