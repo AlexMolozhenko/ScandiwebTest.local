@@ -56,8 +56,34 @@ function validForm(form){
     }
 }
 
+// /**
+//  * form cleaning
+//  * @param form
+//  */
+// function formReset(form){
+//     form.reset();
+// }
+//
+// /**
+//  * redirect to page address
+//  * @param url
+//  */
+// function redirect(url='/'){
+//     location.href = url;
+// }
 /**
- * form submit function to server
+ * clearing the form and redirecting to the main page
+ * @param e
+ */
+document.getElementById('cansel').onclick = function(e){
+
+    let form = document.forms.product_form;
+    formReset(form);
+    redirect();
+    e.preventDefault();
+}
+/**
+ * function of submitting the form to the server and redirecting to the main page
  * @param e
  */
  document.getElementById('save').onclick = function(e){
@@ -73,7 +99,12 @@ function validForm(form){
          xhr.onreadystatechange = function(){
              if(xhr.readyState === 4){
                  if(xhr.status === 200){
-                     document.getElementById('response').innerHTML = this.responseText;
+                     if(this.responseText.length !== 0){
+                         document.getElementById('errorMassage').innerHTML = this.responseText;
+                     }else{
+                         formReset(form);
+                         redirect();
+                     }
                  }
              }
          };
