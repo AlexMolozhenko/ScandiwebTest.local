@@ -8,7 +8,18 @@ class ProductsService extends AbstractService
 {
 
     public function getProduct(){
-        //TODO: getProduct() method.
+        $productAttribute=[];
+//        $products = $this->productsModel->getAll();
+        $attribute = $this->productTypeAttributeModel->getAll();
+//        foreach($products as $product){
+//            $attribute = $this->productTypeAttributeModel->get($product['id']);
+//            $productAttribute += [
+//                'products'=>$products,
+//                'attribute'=>$attribute,
+//            ];
+//
+//        }
+        return $attribute;
     }
 
     /**
