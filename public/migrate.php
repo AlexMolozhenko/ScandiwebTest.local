@@ -27,7 +27,7 @@ echo 'db structure (attribute  table): ' . ($result ? 'true' : $db->error) . '</
 /**
  * CREATE TABLE products
  */
-$sql ="CREATE TABLE products ( id int unsigned auto_increment ,sku varchar(80) unique , name varchar(100),price DECIMAL(20,2),type_id int unsigned,  PRIMARY KEY(id), FOREIGN KEY (type_id) REFERENCES type(id));";
+$sql ="CREATE TABLE products ( id int unsigned auto_increment ,sku varchar(80) unique , name varchar(100),price DECIMAL(20,2),currency varchar (10) DEFAULT '$',type_id int unsigned,  PRIMARY KEY(id), FOREIGN KEY (type_id) REFERENCES type(id));";
 
 $result = $db->query($sql);
 echo 'db structure (product  table): ' . ($result ? 'true' : $db->error) . '</br>'.
