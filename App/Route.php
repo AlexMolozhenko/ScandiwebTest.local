@@ -51,6 +51,7 @@ class Route
         try{
             $controller->$action();
         }catch (Exception $e){
+            self:self::addErrors([$e->getMessage()]);
             exit($e->getMessage());
         }
 
@@ -75,6 +76,12 @@ class Route
     {
         header("location: $url");
         exit();
+    }
+
+    static public function addErrors(array $errors)
+    {
+        session_start();
+        $_SESSION['errors'] = $errors;
     }
 
     /**
