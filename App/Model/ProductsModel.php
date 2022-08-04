@@ -16,8 +16,6 @@ class ProductsModel extends AbstractModel implements InterfaceProductsModel
     public function getAll()
     {
         $sql = "SELECT * FROM `products`;";
-//        $sql = "SELECT `products`.`id` as `productId`,`products`.`sku` as `productSku`,`products`.`name` as `productName`,`products`.`price`,`products`.`currency`,`attribute`.`name` as `attributeName`,`attribute`.`units` as `atributeUnits`,`products_type_attribute`.`value` as `attributeValue` FROM `products` INNER JOIN  `products_type_attribute` ON `products_type_attribute`.`products_id`=`products`.`id`INNER JOIN `type_attribute` ON `type_attribute`.`id`=`products_type_attribute`.`type_attribute_id` INNER JOIN `attribute` ON `type_attribute`.`attribute_id`=`attribute`
-//.`id`;";
         $result = $this->db->query($sql);
         if($this->db->errno !== 0  ){
             throw new \Exception($this->db->error);
@@ -33,12 +31,12 @@ class ProductsModel extends AbstractModel implements InterfaceProductsModel
      */
     public function get($id)
     {
-//        $sql = "SELECT * FROM `products` WHERE `id`={$id};";
-//        $result = $this->db->query($sql);
-//        if($this->db->errno !== 0  ){
-//            throw new \Exception($this->db->error);
-//        }
-//        return $result->fetch_all(MYSQLI_ASSOC);
+        $sql = "SELECT * FROM `products` WHERE `id`={$id};";
+        $result = $this->db->query($sql);
+        if($this->db->errno !== 0  ){
+            throw new \Exception($this->db->error);
+        }
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     /**
@@ -62,6 +60,22 @@ class ProductsModel extends AbstractModel implements InterfaceProductsModel
 
     }
 
+    /**
+     * delete product by id
+     * @param $id
+     * @return mixed|void
+     * @throws \Exception
+     */
+    public function delete($id)
+    {
+        $sql = "DELETE FROM `products` WHERE `products`.`id` = {$id};";
+        $result = $this->db->query($sql);
+        if($this->db->errno !== 0  ){
+            throw new \Exception($this->db->error);
+        }
+        return $result;
+
+    }
 
 
 }
