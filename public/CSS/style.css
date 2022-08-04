@@ -1,0 +1,25 @@
+
+/*input:invalid{*/
+/*    border: 2px solid #000000 ;*/
+/*}*/
+
+/*!*input:invalid:required {*!*/
+/*!*    background-image: linear-gradient(to right, pink, lightgreen);*!*/
+/*!*}*!*/
+
+/*input:valid {*/
+/*    border: 2px solid lightgreen;*/
+/*}*/
+input{
+    justify-content:flex-start;
+    align-self: flex-start;
+}
+.product{
+    border:1px solid #000000;
+    width:150px;
+    height:150px;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
