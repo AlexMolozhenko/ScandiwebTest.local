@@ -16,17 +16,15 @@ class ProductListController extends AbstractController
 
     public function index(){
 
-        $productsAtr = $this->productsService->getProduct();
-
+        $products = $this->productsService->getProduct();
         $this->view->render('productList_index_view',[
-            'productsAtr'=>$productsAtr,
+            'products'=>$products,
         ]);
-
-
-
-
     }
 
-
+    public function destroy(){
+        $productsId = $_POST['products'];
+        $this->productsService->destroy($productsId);
+    }
 
 }
