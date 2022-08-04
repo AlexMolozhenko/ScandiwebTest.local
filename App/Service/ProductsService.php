@@ -9,17 +9,21 @@ class ProductsService extends AbstractService
 
     public function getProduct(){
         $productAttribute=[];
-//        $products = $this->productsModel->getAll();
-        $attribute = $this->productTypeAttributeModel->getAll();
-//        foreach($products as $product){
-//            $attribute = $this->productTypeAttributeModel->get($product['id']);
-//            $productAttribute += [
-//                'products'=>$products,
-//                'attribute'=>$attribute,
-//            ];
-//
-//        }
-        return $attribute;
+
+        $products = $this->productsModel->getAll();
+
+       $attributes = $this->productTypeAttributeModel->getAll();
+
+        foreach($products as $product){
+            $productAttribute[$product['id']]=['product'=>$product];
+
+            foreach($attributes as $attribute){
+                if($attribute['productId']==$product['id']){
+                    $productAttribute[$product['id']]['attributes'][]=$attribute;
+                }
+            }
+        }
+        return $productAttribute;
     }
 
     /**
@@ -37,6 +41,19 @@ class ProductsService extends AbstractService
         foreach ($attributes as $key=>$value){
 
             $this->productTypeAttributeModel->add($IdProduct,$key,$value);
+        }
+    }
+
+    /**
+     * deleting a product and its attribute values
+     * @param $productId
+     * @throws \Exception
+     */
+    public function destroy ($productId){
+        foreach($productId as $id){
+             $this->productTypeAttributeModel->delete($id);
+                 $this->productsModel->delete($id);
+
         }
     }
 

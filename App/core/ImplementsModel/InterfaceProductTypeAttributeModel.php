@@ -14,5 +14,9 @@ interface InterfaceProductTypeAttributeModel extends InterfaceModel
      */
     public function add($products_id,$type_attribute_id,$value);
 
-
+    /**
+     * @param $Id
+     * @return mixed
+     */
+    public function delete($Id);
 }
