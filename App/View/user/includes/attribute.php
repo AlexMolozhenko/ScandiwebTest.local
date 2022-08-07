@@ -4,7 +4,10 @@
     <input type="hidden" name="typeId" value="<?=$typeId?>"/>
 
     <?php foreach ($attributes as $attribute):?>
-       <label><?=$attribute['name']?> (<?=$attribute['units']?>)
-           <input type="number" step="any" name="attributes[<?=$attribute['id']?>]" id="<?=$attribute['id']?>" form="product_form"  pattern="\-?\d+[.,]\d" required/>
-       </label>
+    <div class="input_attribute_form">
+        <label for="<?=mb_strtolower($attribute['name'])?>"><?=$attribute['name']?> (<?=$attribute['units']?>)</label>
+            <input type="number" step="any" name="attributes[<?=$attribute['id']?>]" id="<?=mb_strtolower($attribute['name'])?>" form="product_form"  pattern="\-?\d+[.,]\d" required/>
+
+    </div>
+
     <?php endforeach;?>
