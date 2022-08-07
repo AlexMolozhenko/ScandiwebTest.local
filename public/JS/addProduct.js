@@ -4,18 +4,20 @@
  * @param e
  */
  document.getElementById('productType').onchange = function(e){
-     let typeId = this.value;
-     let xhr = new XMLHttpRequest();
-     let url = "AddProduct/getAttribute/?typeId="+typeId;
-     xhr.open('GET',url);
-     xhr.send();
-     xhr.onreadystatechange = function(){
-         if(xhr.readyState === 4){
-             if(xhr.status === 200){
-                 document.getElementById('attribute').innerHTML = this.responseText;
+         let typeId = this.value;
+         let xhr = new XMLHttpRequest();
+         let url = "AddProduct/getAttribute/?typeId="+typeId;
+         xhr.open('GET',url);
+         xhr.send();
+         xhr.onreadystatechange = function(){
+             if(xhr.readyState === 4){
+                 if(xhr.status === 200){
+                     document.getElementById('attribute').innerHTML = this.responseText;
+                 }
              }
-         }
-     };
+         };
+
+
      e.preventDefault();
  };
 
@@ -29,7 +31,9 @@ function elementValid(e){
             e.setCustomValidity("Please, provide "+e.name);
         }else if (e.validity.patternMismatch){
             e.setCustomValidity("Element value "+e.name+" does not match attribute");
-        }else {
+        }else  if(e.value ===''){
+            e.setCustomValidity("type not selected not selected");
+        }else{
             e.setCustomValidity('');
         }
     return   e.reportValidity();
@@ -56,21 +60,6 @@ function validForm(form){
     }
 }
 
-// /**
-//  * form cleaning
-//  * @param form
-//  */
-// function formReset(form){
-//     form.reset();
-// }
-//
-// /**
-//  * redirect to page address
-//  * @param url
-//  */
-// function redirect(url='/'){
-//     location.href = url;
-// }
 /**
  * clearing the form and redirecting to the main page
  * @param e

@@ -12,7 +12,6 @@ document.getElementById('add').onclick = function(e){
  * @param e
  */
 document.getElementById('delete-product-btn').onclick = function(e){
-    alert('ok');
     let form = document.forms.delete_form;
     let formData = new FormData(form);
     let xhr = new XMLHttpRequest();
