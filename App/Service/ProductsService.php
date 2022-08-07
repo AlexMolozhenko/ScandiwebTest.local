@@ -7,6 +7,11 @@ use core\ServiceAbstract\AbstractService;
 class ProductsService extends AbstractService
 {
 
+    /**
+     * get all products with attributes from the database
+     * @return array
+     * @throws \Exception
+     */
     public function getProduct(){
         $productAttribute=[];
 
