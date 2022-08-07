@@ -9,12 +9,19 @@ use Exception\MySQLException;
 
 class AddProductController extends AbstractController
 {
+    /**
+     * connection of the user part of the display
+     */
     public function __construct()
     {
         parent::__construct('user');
 
     }
 
+    /**
+     * gets product types from the database and connects the html page for adding products
+     * @throws \Exception
+     */
     public function index(){
         $types = $this->typeService->getAll();
         $errors =\Route::getErrors();
@@ -25,12 +32,20 @@ class AddProductController extends AbstractController
     }
 
 
+    /**
+     * receives attributes from the database depending on the product type. and returns the generated html with a list of attributes
+     * @throws \Exception
+     */
     public function getAttribute(){
         $typeId = filter_input(INPUT_GET,'typeId');
         $arrayAttributes = $this->attributeService->getAttributeByTypeId($typeId);
         $this->view->includeAttribute($arrayAttributes,$typeId);
     }
 
+    /**
+     * receives these products from the client and stores them in the database
+     * @throws \Exception
+     */
     public function add(){
         $sku = filter_input(INPUT_POST,'sku');
         $name = filter_input(INPUT_POST,'name');
