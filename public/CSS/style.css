@@ -49,6 +49,13 @@ nav{
     justify-content:space-around;
     margin-right:5%;
 }
+.button>button{
+    background-color: rgba(212,204,202,0.85);
+    border:1px solid #000000;
+}
+.button>button:active{
+    box-shadow: 1px 1px rgba(38,36,36,0.85);
+}
 html {
     height: 100%;
 }
