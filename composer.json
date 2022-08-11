@@ -1,14 +1,4 @@
 {
-  "name": "vendor_name/ScandiwebTest",
-  "description": "description",
-  "minimum-stability": "stable",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "Алексей",
-      "email": "email@example.com"
-    }
-  ],
   "require": {
   }
 }
