@@ -48,24 +48,29 @@ class Route
         if(!empty($uriComponents[0])){
             $controllerName = mb_strtolower(urldecode($uriComponents[0]));
         }
-
+//===
         pr($controllerName);
+//===
         if(!empty($uriComponents[1])){
             $action = mb_strtolower(urldecode($uriComponents[1]));
         }
-
+//===
         pr($action);
-        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
+//===
+//        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
+        $controllerClass = '\Controllers\\' . str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'Controller';
         if(!class_exists($controllerClass)){
 //            self::notFound();
             exit('controller exists');
         }
         $controller = new $controllerClass();
 
+
         if(!method_exists($controller, $action)){
 //        self::notFound();
            exit('action exists');
         }
+
 
         try{
             $controller->$action();
