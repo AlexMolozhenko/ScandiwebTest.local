@@ -1,7 +1,7 @@
 <?php
 
 
-include_once '../config/configRoute.php';
+include_once '..'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'configRoute.php';
 
 
 class Route
@@ -60,7 +60,7 @@ class Route
         pr($action);
 //===
 //        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
-        $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'controller';
+        $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', mb_ucfirst($controllerName)).'Controller';
 //===
         pr($controllerClass);
 //===
