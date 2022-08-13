@@ -45,42 +45,42 @@ class Route
         $controllerName = DEFAULT_CONTROLLER_NAME;
         $action = DEFAULT_ACTION_NAME;
 
-        if(!empty($uriComponents[0])){
-//            $controllerName = mb_strtolower(urldecode($uriComponents[0]));
-            $controllerName = urldecode($uriComponents[0]);
-        }
-//===
-        pr($controllerName);
-//===
-        if(!empty($uriComponents[1])){
-//            $action = mb_strtolower(urldecode($uriComponents[1]));
-            $action = urldecode($uriComponents[1]);
-        }
-//===
-        pr($action);
-//===
+//        if(!empty($uriComponents[0])){
+////            $controllerName = mb_strtolower(urldecode($uriComponents[0]));
+//            $controllerName = urldecode($uriComponents[0]);
+//        }
+////===
+//        pr($controllerName);
+////===
+//        if(!empty($uriComponents[1])){
+////            $action = mb_strtolower(urldecode($uriComponents[1]));
+//            $action = urldecode($uriComponents[1]);
+//        }
+////===
+//        pr($action);
+////===
 //        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
         $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', mb_ucfirst($controllerName)).'Controller';
-//===
-        pr($controllerClass);
-//===
-//===
-        pr(class_exists($controllerClass));
-        pr(class_exists('Controllers'.DIRECTORY_SEPARATOR.'ProductlistController'));
-//        if (class_exists(MyClass::class)) {
-//            $myclass = new MyClass();
-//        }
-//===
-//        if(!class_exists($controllerClass)){
-////            self::notFound();
-//            exit('CONTROLLER exists');
-//        }
+////===
+//        pr($controllerClass);
+////===
+////===
+//        pr(class_exists($controllerClass));
+//        pr(class_exists('Controllers'.DIRECTORY_SEPARATOR.'ProductlistController'));
+////        if (class_exists(MyClass::class)) {
+////            $myclass = new MyClass();
+////        }
+////===
+////        if(!class_exists($controllerClass)){
+//////            self::notFound();
+////            exit('CONTROLLER exists');
+////        }
         $controller = new $controllerClass();
-
-//        if(!method_exists($controller, $action)){
-////        self::notFound();
-//           exit('action exists');
-//        }
+//
+        if(!method_exists($controller, $action)){
+//        self::notFound();
+           exit('action exists');
+        }
 
 
 
