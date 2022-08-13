@@ -66,6 +66,7 @@ class Route
 //===
 //===
         pr(class_exists($controllerClass));
+        pr(class_exists('\\Controllers\\ProductlistController'));
 //===
         if(!class_exists($controllerClass)){
 //            self::notFound();
