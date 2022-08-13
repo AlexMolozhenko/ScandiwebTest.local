@@ -59,6 +59,9 @@ class Route
 //===
 //        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
         $controllerClass = '\Controllers\\' . str_replace(DIRECTORY_SEPARATOR, '\\', mb_ucfirst($controllerName)).'Controller';
+//===
+        pr(class_exists($controllerClass));
+//===
         if(!class_exists($controllerClass)){
 //            self::notFound();
             exit('CONTROLLER exists');
