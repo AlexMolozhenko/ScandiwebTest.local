@@ -1,6 +1,6 @@
 <?php
 
-const DEFAULT_CONTROLLER_NAME= 'ProductList' ;
+const DEFAULT_CONTROLLER_NAME= 'Productlist' ;
 
 const DEFAULT_ACTION_NAME = 'index';
 

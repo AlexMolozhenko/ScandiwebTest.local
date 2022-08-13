@@ -7,7 +7,7 @@ namespace Controllers;
 use Core\ControllerAbstract\AbstractController;
 use Exception\MySQLException;
 
-class AddProductController extends AbstractController
+class AddproductController extends AbstractController
 {
     /**
      * connection of the user part of the display

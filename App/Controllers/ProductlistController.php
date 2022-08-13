@@ -6,7 +6,7 @@ namespace Controllers;
 
 use Core\ControllerAbstract\AbstractController;
 
-class ProductListController extends AbstractController
+class ProductlistController extends AbstractController
 {
     /**
      * connection of the user part of the display
