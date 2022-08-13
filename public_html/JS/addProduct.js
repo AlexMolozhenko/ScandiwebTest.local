@@ -6,9 +6,11 @@
  document.getElementById('productType').onchange = function(e){
          let typeId = this.value;
          let xhr = new XMLHttpRequest();
-         let url = "AddProduct/getAttribute/?typeId="+typeId;
-         xhr.open('GET',url);
-         xhr.send();
+         let url = "/AddProduct/getAttribute/";
+         let formData = new FormData();
+         formData.append("typeId",typeId);
+         xhr.open('POST',url);
+         xhr.send(formData);
          xhr.onreadystatechange = function(){
              if(xhr.readyState === 4){
                  if(xhr.status === 200){
@@ -16,8 +18,6 @@
                  }
              }
          };
-
-
      e.preventDefault();
  };
 

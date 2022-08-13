@@ -37,7 +37,7 @@ class AddProductController extends AbstractController
      * @throws \Exception
      */
     public function getAttribute(){
-        $typeId = filter_input(INPUT_GET,'typeId');
+        $typeId = filter_input(INPUT_POST,'typeId');
         $arrayAttributes = $this->attributeService->getAttributeByTypeId($typeId);
         $this->view->includeAttribute($arrayAttributes,$typeId);
     }
