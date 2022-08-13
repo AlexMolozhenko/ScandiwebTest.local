@@ -12,7 +12,7 @@
 
 
     <main>
-        <?php include_once '../App' . DIRECTORY_SEPARATOR . VIEW_DIR . DIRECTORY_SEPARATOR .$this->view_template_dir. DIRECTORY_SEPARATOR .$pageTemplate.'.php';?>
+        <?php include_once '..'.DIRECTORY_SEPARATOR.'App' . DIRECTORY_SEPARATOR . VIEW_DIR . DIRECTORY_SEPARATOR .$this->view_template_dir. DIRECTORY_SEPARATOR .$pageTemplate.'.php';?>
     </main>
     <footer><p>Scandiweb Test assignment</p></footer>
     <script src="../JS/core.js"></script>

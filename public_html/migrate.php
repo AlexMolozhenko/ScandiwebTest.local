@@ -1,7 +1,7 @@
 <?php
 
 
-include_once "../config/configDB.php";
+include_once "..".DIRECTORY_SEPARATOR."config".DIRECTORY_SEPARATOR."configDB.php";
 
 /**
  * connect DB

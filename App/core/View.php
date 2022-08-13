@@ -2,7 +2,7 @@
 
 namespace Core;
 
-include_once "../config/configView.php";
+include_once "..".DIRECTORY_SEPARATOR."config".DIRECTORY_SEPARATOR."configView.php";
 
 class View
 {
@@ -46,7 +46,7 @@ include_once ROOT_DIRECTORY . DIRECTORY_SEPARATOR . VIEW_DIR . DIRECTORY_SEPARAT
      * @param $attributes
      */
     public function includeAttribute($attributes,$typeId){
-        $fileName ="../App/View/user/includes/attribute.php";
+        $fileName ="..".DIRECTORY_SEPARATOR."App".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."user".DIRECTORY_SEPARATOR."includes".DIRECTORY_SEPARATOR."attribute.php";
         if(file_exists($fileName)){
             include_once $fileName;
         }else{

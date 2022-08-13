@@ -1,6 +1,6 @@
 <?php
 
-include_once '../config/configAutoloadRegister.php';
+include_once '..'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'configAutoloadRegister.php';
 
 
 /**

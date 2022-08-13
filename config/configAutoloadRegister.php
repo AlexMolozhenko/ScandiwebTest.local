@@ -1,5 +1,5 @@
 <?php
 
-const DEFAULT_DIRECTORY_NAME = '../App' ;
+const DEFAULT_DIRECTORY_NAME = '..'.DIRECTORY_SEPARATOR.'App' ;
 
 
