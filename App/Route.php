@@ -73,13 +73,13 @@ class Route
 //===
         if(!class_exists($controllerClass)){
 //            self::notFound();
-            var_dump('CONTROLLER exists');
+            exit('CONTROLLER exists');
         }
         $controller = new $controllerClass();
 //
         if(!method_exists($controller, $action)){
 //        self::notFound();
-            var_dump('action exists');
+            exit('action exists');
         }
 
 
