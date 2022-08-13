@@ -1,5 +1,7 @@
 {
   "require": {
-    "symfony/polyfill-mbstring": "^1.26"
+    "ext-mbstring": "*"
+
+
   }
 }
