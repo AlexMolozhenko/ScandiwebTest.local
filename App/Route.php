@@ -66,7 +66,7 @@ class Route
 //===
 //===
         pr(class_exists($controllerClass));
-        pr(class_exists(DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR.'ProductlistController'));
+        pr(class_exists('Controllers'.DIRECTORY_SEPARATOR.'ProductlistController'));
 //===
         if(!class_exists($controllerClass)){
 //            self::notFound();
