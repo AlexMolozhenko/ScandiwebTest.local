@@ -24,7 +24,7 @@ class Route
 //            $var = preg_replace($pat, '$2', $src);
 //            echo '<script>console.log("' . trim($var) . '=' .
 //                addslashes(json_encode($val, JSON_UNESCAPED_UNICODE)) . '")</script>' . "\n";
-    echo '<script>console.log("' .$val. $_SERVER['SERVER_NAME'].'")</script>' . "\n";
+    echo '<script>console.log("' .$val.'")</script>' . "\n";
         }
         pr($uri);
 //====
@@ -49,10 +49,12 @@ class Route
             $controllerName = mb_strtolower(urldecode($uriComponents[0]));
         }
 
+        pr($controllerName);
         if(!empty($uriComponents[1])){
             $action = mb_strtolower(urldecode($uriComponents[1]));
         }
 
+        pr($action);
         $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
         if(!class_exists($controllerClass)){
 //            self::notFound();
@@ -62,7 +64,7 @@ class Route
 
         if(!method_exists($controller, $action)){
 //        self::notFound();
-        exit('action exists');
+           exit('action exists');
         }
 
         try{
