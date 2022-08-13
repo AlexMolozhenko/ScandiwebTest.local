@@ -60,6 +60,9 @@ class Route
 //        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
         $controllerClass = DIRECTORY_SEPARATOR.'Controllers\\' . str_replace(DIRECTORY_SEPARATOR, '\\', mb_ucfirst($controllerName)).'Controller';
 //===
+        pr($controllerClass);
+//===
+//===
         pr(class_exists($controllerClass));
 //===
         if(!class_exists($controllerClass)){
