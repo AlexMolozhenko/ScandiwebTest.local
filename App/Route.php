@@ -67,17 +67,21 @@ class Route
 //===
         pr(class_exists($controllerClass));
         pr(class_exists('Controllers'.DIRECTORY_SEPARATOR.'ProductlistController'));
+//        if (class_exists(MyClass::class)) {
+//            $myclass = new MyClass();
+//        }
 //===
-        if(!class_exists($controllerClass)){
-//            self::notFound();
-            exit('CONTROLLER exists');
-        }
+//        if(!class_exists($controllerClass)){
+////            self::notFound();
+//            exit('CONTROLLER exists');
+//        }
         $controller = new $controllerClass();
 
-        if(!method_exists($controller, $action)){
-//        self::notFound();
-           exit('action exists');
-        }
+//        if(!method_exists($controller, $action)){
+////        self::notFound();
+//           exit('action exists');
+//        }
+
 
 
         try{
