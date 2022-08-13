@@ -46,19 +46,21 @@ class Route
         $action = DEFAULT_ACTION_NAME;
 
         if(!empty($uriComponents[0])){
-            $controllerName = mb_strtolower(urldecode($uriComponents[0]));
+//            $controllerName = mb_strtolower(urldecode($uriComponents[0]));
+            $controllerName = urldecode($uriComponents[0]);
         }
 //===
         pr($controllerName);
 //===
         if(!empty($uriComponents[1])){
-            $action = mb_strtolower(urldecode($uriComponents[1]));
+//            $action = mb_strtolower(urldecode($uriComponents[1]));
+            $action = urldecode($uriComponents[1]);
         }
 //===
         pr($action);
 //===
 //        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
-        $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', mb_ucfirst($controllerName)).'Controller';
+        $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'controller';
 //===
         pr($controllerClass);
 //===

@@ -3,7 +3,7 @@
  * @param e
  */
 document.getElementById('add').onclick = function(e){
-    redirect('addProduct')
+    redirect('AddProduct');
     e.preventDefault();
 }
 
