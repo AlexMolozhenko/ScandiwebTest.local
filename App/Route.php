@@ -59,16 +59,17 @@ class Route
 ////===
 //        pr($action);
 ////===
-        $controllerClass = '\Controllers\\'.$controllerName.'Controller';
-////===
-        pr($controllerClass);
-////===
+//        $controllerClass = '\Controllers\\'.$controllerName.'Controller';
+
         $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'Controller';
+        $controllerClasstest = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR.$controllerName.'Controller';
 ////===
         pr($controllerClass);
+        pr($controllerClasstest);
 ////===
 //===
         pr(class_exists($controllerClass));
+        pr(class_exists($controllerClasstest));
 //        pr(class_exists('Controllers'.DIRECTORY_SEPARATOR.'productlistController'));
 //        if (class_exists(MyClass::class)) {
 //            $myclass = new MyClass();
