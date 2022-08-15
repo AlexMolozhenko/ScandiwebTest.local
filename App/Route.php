@@ -59,7 +59,10 @@ class Route
 ////===
 //        pr($action);
 ////===
-//        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
+        $controllerClass = '\Controllers\\'.$controllerName.'Controller';
+////===
+        pr($controllerClass);
+////===
         $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'Controller';
 ////===
         pr($controllerClass);
