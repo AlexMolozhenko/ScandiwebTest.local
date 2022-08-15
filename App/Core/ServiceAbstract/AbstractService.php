@@ -1,5 +1,5 @@
 <?php
-namespace core\ServiceAbstract;
+namespace Core\ServiceAbstract;
 
 use Model\AttributeModel;
 use Model\ProductsModel;
