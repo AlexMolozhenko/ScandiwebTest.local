@@ -63,7 +63,7 @@ class Route
 
 //        $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'Controller';
 //        $controllerClass = '~/Controllers/'. str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'Controller';
-        $controllerClass = '/App/Controllers/'.$controllerName.'Controller';
+        $controllerClass = 'App'.DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR.$controllerName.'Controller';
 ////===
         pr($controllerClass);
 ////===
