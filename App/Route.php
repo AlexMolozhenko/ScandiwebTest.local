@@ -56,9 +56,9 @@ class Route
             $action = mb_strtolower(urldecode($uriComponents[1]));
 //            $action = urldecode($uriComponents[1]);
         }
-////===
-//        pr($action);
-////===
+//===
+       var_dump($uriComponents);
+//===
 //        $controllerClass = '\Controllers\\'.$controllerName.'Controller';
 
      $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'Controller';
