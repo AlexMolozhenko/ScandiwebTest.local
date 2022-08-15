@@ -2,8 +2,8 @@
 
 namespace Model;
 
-use core\ImplementsModel\InterfaceTypeModel;
-use core\ModelAbstract\AbstractModel;
+use Core\ImplementsModel\InterfaceTypeModel;
+use Core\ModelAbstract\AbstractModel;
 
 class TypeModel extends AbstractModel implements InterfaceTypeModel
 {

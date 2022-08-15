@@ -4,8 +4,8 @@ namespace Model;
 
 
 
-use core\ImplementsModel\InterfaceAttributeModel;
-use core\ModelAbstract\AbstractModel;
+use Core\ImplementsModel\InterfaceAttributeModel;
+use Core\ModelAbstract\AbstractModel;
 
 class AttributeModel extends AbstractModel implements InterfaceAttributeModel
 {

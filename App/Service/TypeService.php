@@ -2,7 +2,7 @@
 
 namespace Service;
 
-use core\ServiceAbstract\AbstractService;
+use Core\ServiceAbstract\AbstractService;
 
 class TypeService extends AbstractService
 {

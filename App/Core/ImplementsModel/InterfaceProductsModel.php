@@ -1,6 +1,6 @@
 <?php
 
-namespace core\ImplementsModel;
+namespace Core\ImplementsModel;
 
 interface InterfaceProductsModel extends InterfaceModel
 {

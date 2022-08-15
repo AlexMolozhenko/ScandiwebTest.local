@@ -3,8 +3,8 @@
 namespace Model;
 
 
-use core\ImplementsModel\InterfaceProductTypeAttributeModel;
-use core\ModelAbstract\AbstractModel;
+use Core\ImplementsModel\InterfaceProductTypeAttributeModel;
+use Core\ModelAbstract\AbstractModel;
 
 class ProductTypeAttributeModel extends AbstractModel implements InterfaceProductTypeAttributeModel
 {

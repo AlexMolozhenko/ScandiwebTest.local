@@ -2,8 +2,8 @@
 
 namespace Model;
 
-use core\ImplementsModel\InterfaceProductsModel;
-use core\ModelAbstract\AbstractModel;
+use Core\ImplementsModel\InterfaceProductsModel;
+use Core\ModelAbstract\AbstractModel;
 use Exception\MySQLException;
 
 class ProductsModel extends AbstractModel implements InterfaceProductsModel
