@@ -6,7 +6,7 @@
  document.getElementById('productType').onchange = function(e){
          let typeId = this.value;
          let xhr = new XMLHttpRequest();
-         let url = "/AddProduct/getAttribute/";
+         let url = "/addproduct/getAttribute/";
          let formData = new FormData();
          formData.append("typeId",typeId);
          xhr.open('POST',url);

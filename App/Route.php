@@ -17,17 +17,17 @@ class Route
 //======
         function pr($val)
         {
-//            $bt = debug_backtrace();
-//            $file = file($bt[0]['file']);
-//            $src = $file[$bt[0]['line'] - 1];
-//            $pat = '#(.*)' . __FUNCTION__ . ' *?\( *?(.*) *?\)(.*)#i';
-//            $var = preg_replace($pat, '$2', $src);
-//            echo '<script>console.log("' . trim($var) . '=' .
-//                addslashes(json_encode($val, JSON_UNESCAPED_UNICODE)) . '")</script>' . "\n";
+            $bt = debug_backtrace();
+            $file = file($bt[0]['file']);
+            $src = $file[$bt[0]['line'] - 1];
+            $pat = '#(.*)' . __FUNCTION__ . ' *?\( *?(.*) *?\)(.*)#i';
+            $var = preg_replace($pat, '$2', $src);
+            echo '<script>console.log("' . trim($var) . '=' .
+                addslashes(json_encode($val, JSON_UNESCAPED_UNICODE)) . '")</script>' . "\n";
     echo '<script>console.log("' .$val.'")</script>' . "\n";
         }
         pr($uri);
-//====
+////====
 
         array_shift($uriComponents);
         return $uriComponents;
@@ -46,27 +46,27 @@ class Route
         $action = DEFAULT_ACTION_NAME;
 
         if(!empty($uriComponents[0])){
-//            $controllerName = mb_strtolower(urldecode($uriComponents[0]));
-            $controllerName = urldecode($uriComponents[0]);
+            $controllerName = mb_strtolower(urldecode($uriComponents[0]));
+//            $controllerName = urldecode($uriComponents[0]);
         }
-//===
-        pr($controllerName);
-//===
+////===
+//        pr($controllerName);
+////===
         if(!empty($uriComponents[1])){
-//            $action = mb_strtolower(urldecode($uriComponents[1]));
-            $action = urldecode($uriComponents[1]);
+            $action = mb_strtolower(urldecode($uriComponents[1]));
+//            $action = urldecode($uriComponents[1]);
         }
-//===
-        pr($action);
-//===
+////===
+//        pr($action);
+////===
 //        $controllerClass = '\Controllers\\'.mb_ucfirst($controllerName).'Controller';
-        $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', mb_ucfirst($controllerName)).'Controller';
-//===
+        $controllerClass = DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. str_replace(DIRECTORY_SEPARATOR, '\\', $controllerName).'Controller';
+////===
         pr($controllerClass);
-//===
+////===
 //===
         pr(class_exists($controllerClass));
-        pr(class_exists('Controllers'.DIRECTORY_SEPARATOR.'ProductlistController'));
+//        pr(class_exists('Controllers'.DIRECTORY_SEPARATOR.'productlistController'));
 //        if (class_exists(MyClass::class)) {
 //            $myclass = new MyClass();
 //        }

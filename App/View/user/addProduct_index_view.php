@@ -8,7 +8,7 @@
 </nav>
 
 
-    <form action="<?= Route::url('AddProduct','add')?>" method="POST" enctype="application/x-www-form-urlencoded" name="product_form" id="product_form" >
+    <form action="<?= Route::url('addproduct','add')?>" method="POST" enctype="application/x-www-form-urlencoded" name="product_form" id="product_form" >
         <div class="product_add_form">
             <div class="input_form">
                 <label for="productSku">SKU</label>

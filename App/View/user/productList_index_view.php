@@ -7,7 +7,7 @@
         <button type="button" id="delete-product-btn" form="delete-form" >Mass Delete</button>
     </div>
 </nav>
-<form action="<?= Route::url('ProductList','destroy')?>" method="POST" enctype="application/x-www-form-urlencoded" id="delete_form">
+<form action="<?= Route::url('productlist','destroy')?>" method="POST" enctype="application/x-www-form-urlencoded" id="delete_form">
     <div class="product_list">
         <?php foreach($products as $product):?>
             <div class="product">
