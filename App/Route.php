@@ -70,13 +70,13 @@ class Route
 //===
         if(!class_exists($controllerClass)){
 //            self::notFound();
-            exit('CONTROLLER exists');
+            exit('CONTROLLER not exists');
         }
         $controller = new $controllerClass();
 //
         if(!method_exists($controller, $action)){
 //        self::notFound();
-            exit('action exists');
+            exit('action not exists');
         }
 
 
@@ -84,8 +84,8 @@ class Route
         try{
             $controller->$action();
         }catch (Exception $e){
-            self:self::addErrors([$e->getMessage()]);
-            exit($e->getMessage());
+            self::addErrors([$e->getMessage()]);
+//            exit($e->getMessage());
         }
 
     }
