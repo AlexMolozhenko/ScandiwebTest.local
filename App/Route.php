@@ -15,15 +15,6 @@ class Route
     static public function getUri(){
         $uri = $_SERVER['REQUEST_URI'];
         $uriComponents = explode('/',$uri);
-//======
-        function pr($val)
-        {
-
-    echo '<script>console.log("' .$val.'")</script>';
-        }
-        pr($uri);
-////====
-
         array_shift($uriComponents);
         return $uriComponents;
     }
@@ -42,37 +33,23 @@ class Route
 
         if(!empty($uriComponents[0])){
             $controllerName = mb_strtolower(urldecode($uriComponents[0]));
-//            $controllerName = urldecode($uriComponents[0]);
         }
-////===
-//        pr($controllerName);
-////===
+
         if(!empty($uriComponents[1])){
             $action = mb_strtolower(urldecode($uriComponents[1]));
-//            $action = urldecode($uriComponents[1]);
         }
-//===
-       var_dump($uriComponents);
-//===
-//        $controllerClass = '\Controllers\\'.$controllerName.'Controller';
+
 
      $controllerClass = '\Controllers\\'.$controllerName.'Controller';
-////===
-        pr($controllerClass);
-        var_dump($controllerClass);
-////===
-//===
-        pr(class_exists($controllerClass));
-//===
+
         if(!class_exists($controllerClass)){
-//            self::notFound();
-            exit('CONTROLLER not exists');
+           self::notFound();
+
         }
         $controller = new $controllerClass();
-//
+
         if(!method_exists($controller, $action)){
-//        self::notFound();
-            exit('action not exists');
+            self::notFound();
         }
 
 
@@ -81,7 +58,6 @@ class Route
             $controller->$action();
         }catch (Exception $e){
             self::addErrors([$e->getMessage()]);
-//            exit($e->getMessage());
         }
 
     }
