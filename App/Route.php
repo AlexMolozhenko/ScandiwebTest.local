@@ -1,5 +1,6 @@
 <?php
 
+ini_set('display_errors',true);
 
 include_once '..'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'configRoute.php';
 
