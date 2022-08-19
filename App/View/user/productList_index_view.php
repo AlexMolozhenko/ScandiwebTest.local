@@ -3,8 +3,8 @@
 <nav>
     <div class="name_page"><h2>Product list</h2></div>
     <div class="button">
-        <button type="button" id="add" >ADD</button>
-        <button type="button" id="delete-product-btn" form="delete-form" >Mass Delete</button>
+        <button type="button" class="ADD" id="ADD" name="ADD">ADD</button>
+        <button type="button" class="delete-product-btn"  id="delete-product-btn" form="delete-form" name="MASS DELETE">MASS DELETE</button>
     </div>
 </nav>
 <form action="<?= Route::url('productlist','destroy')?>" method="POST" enctype="application/x-www-form-urlencoded" id="delete_form">
@@ -14,7 +14,7 @@
                 <?php foreach($product as $key=>$values):?>
 
                     <?php if($key == 'product'):?>
-                    <input type="checkbox"  name="products[]" value="<?=$values['id']?>" class="delete-checkbox"/>
+                    <input type="checkbox"  name="products[]" value="<?=$values['id']?>" class="delete-checkbox" id="delete-checkbox"/>
                     <div class="product_param">
                         <div><?=$values['sku']?></div>
                         <div><?=$values['name']?></div>
@@ -37,4 +37,4 @@
 
 
 
-<script src="../JS/productList.js"></script>
+<script src="../productList.js"></script>

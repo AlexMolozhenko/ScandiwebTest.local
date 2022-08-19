@@ -2,8 +2,8 @@
 <nav>
     <div class="name_page" ><h2>Product Add</h2></div>
     <div class="button">
-        <button type="button" id="save" form="product_form">Save</button>
-        <button type="button" id="cansel" form="product_form">Cancel</button>
+        <button type="button" class="Save" id="Save" form="product_form" name="SAVE">SAVE</button>
+        <button type="button" class="Cansel" id="Cansel" form="product_form" name="CANCEL">CANCEL</button>
     </div>
 </nav>
 
@@ -11,16 +11,16 @@
     <form action="<?= Route::url('addproduct','add')?>" method="POST" enctype="application/x-www-form-urlencoded" name="product_form" id="product_form" >
         <div class="product_add_form">
             <div class="input_form">
-                <label for="productSku">SKU</label>
-                <input type="text" name="sku" pattern="^[a-zA-Z0-9\/]+$"  required id="productSku" />
+                <label for="sku">SKU</label>
+                <input type="text" name="sku" pattern="^[a-zA-Z0-9\/]+$"  required id="sku" />
             </div>
             <div class="input_form">
-                <label for="productName">Name</label>
-                <input type="text" name="name"   required pattern="^[a-zA-Z0-9\s]+$" id="productName" />
+                <label for="name">Name</label>
+                <input type="text" name="name"   required pattern="^[a-zA-Z0-9\s]+$" id="name" />
             </div>
             <div class="input_form">
-                <label for="productPrice">Price ($)</label>
-                <input type="number" step="any" name="price" pattern="\-?\d+[.,]\d"  required id="productPrice"/>
+                <label for="price">Price ($)</label>
+                <input type="number" step="any" name="price" min="0" pattern="\-?\d+[.,]\d"  required id="price"/>
             </div>
             <div class="input_form">
                 <label for="productType">Type Switcher</label>
@@ -46,4 +46,4 @@
 
 </div>
 
-<script src="../JS/addProduct.js"></script>
+<script src="../addProduct.js"></script>

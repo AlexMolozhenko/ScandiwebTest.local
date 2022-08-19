@@ -64,7 +64,7 @@ function validForm(form){
  * clearing the form and redirecting to the main page
  * @param e
  */
-document.getElementById('cansel').onclick = function(e){
+document.getElementById('Cansel').onclick = function(e){
 
     let form = document.forms.product_form;
     formReset(form);
@@ -75,7 +75,7 @@ document.getElementById('cansel').onclick = function(e){
  * function of submitting the form to the server and redirecting to the main page
  * @param e
  */
- document.getElementById('save').onclick = function(e){
+ document.getElementById('Save').onclick = function(e){
 
      let form = document.forms.product_form;
      if(validForm(form)==true){

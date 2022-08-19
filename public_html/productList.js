@@ -2,7 +2,7 @@
  * redirect to add product page
  * @param e
  */
-document.getElementById('add').onclick = function(e){
+document.getElementById('ADD').onclick = function(e){
     redirect('addproduct');
     e.preventDefault();
 }
